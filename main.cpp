@@ -8,6 +8,7 @@
 using namespace std;
 
 void newgame(int w, int h, int nmines = 10){
+	w += 2; h += 2;
 	vector<vector<bool>> mines(w, vector<bool>(h, false));
 	for(int i = 0; i < nmines; i++){
 		int irand = rand() % (h-2) + 1;
@@ -77,11 +78,12 @@ void newgame(int w, int h, int nmines = 10){
 	//
 	
 	if(win) cout << "YOU WIN!!!" << endl;
-	else cout << "YOU LOOSE!!! BOOOOOO!" << endl;
+	else cout << "YOU LOOSE..." << endl;
 
 }
 
 int main(){
-	newgame(4, 4, 3);
+	cout << "Input game parameters: width, height, number of mines" << endl;
+	int w, h, n; cin >> w >> h >> n;
+	newgame(w, h, n);
 }
-
