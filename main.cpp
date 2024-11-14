@@ -129,4 +129,6 @@ int main(){
 	cout << "Input game parameters: width, height, number of mines" << endl;
 	int w, h, n; cin >> w >> h >> n;
 	newgame(w, h, n);
+	cout << "Press any key..." << endl;
+	int randomintname; cin >> randomintname;
 }
