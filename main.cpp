@@ -6,6 +6,7 @@
 //game by GhostK inspired by Relax
 //TODO: figure out the bug when game crashes on delta(x, y) ~>2
 //TODO: make it crash resistent when you enter wrong move command
+//TODO: fix pseudo random
 
 using namespace std;
 
