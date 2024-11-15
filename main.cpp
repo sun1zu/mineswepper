@@ -2,11 +2,13 @@
 #include <string>
 #include <vector>
 #include <random>
+#include <cstdlib>
 
 //game by GhostK inspired by Relax
 //TODO: figure out the bug when game crashes on delta(x, y) ~>2
 //TODO: make it crash resistent when you enter wrong move command
 //TODO: fix pseudo random
+//TODO: add autofilling empty cells when selected
 
 using namespace std;
 
@@ -51,7 +53,7 @@ void newgame(int w, int h, int nmines = 10){
 	int falseMined = false;	//true if at lesat one flag is not on the mine
 	//game cycle
 	while(!end){
-
+		system("cls");
 		cout << endl << endl;
 
 		//x coords hint
@@ -126,9 +128,20 @@ void newgame(int w, int h, int nmines = 10){
 }
 
 int main(){
-	cout << "Input game parameters: width, height, number of mines" << endl;
-	int w, h, n; cin >> w >> h >> n;
-	newgame(w, h, n);
-	cout << "Press any key..." << endl;
-	int randomintname; cin >> randomintname;
+	cout << "MINESWEPPER v0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2" << endl;
+	cout << "github link: https://github.com/sun1zu/mineswepper" << endl;
+	cout << endl << endl;
+	int w, h, n;
+	char cont = 'y';
+	while(cont != 'n'){
+		cout << "Input game parameters: width, height, number of mines" << endl;
+		cin >> w >> h >> n;
+		newgame(w, h, n);
+		cont = '?';
+		while(cont != 'y' && cont != 'n'){
+			cout << endl << endl << "Play again? y/n: ";
+			cin >> cont;
+			system("cls");
+		}
+	}
 }
